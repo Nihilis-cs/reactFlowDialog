@@ -1,0 +1,49 @@
+{
+    "dialog_nodes": [
+        {
+            "node_id": "start",
+            "speaker_id": "npc_1",
+            "text": "Bonjour, aventurier.",
+            "children": [
+                {
+                    "node_id": "root_1_child_1",
+                    "speaker_id": "npc_1",
+                    "text": "Je peux vous aider.",
+                    "choices": [
+                        {
+                            "text": "Demander de l'aide",
+                            "next_node": {
+                                "node_id": "help",
+                                "speaker_id": "npc_1",
+                                "text": "Je peux vous indiquer la route.",
+                                "children": [
+                                    {
+                                        "node_id": "help_end",
+                                        "speaker_id": "npc_1",
+                                        "text": "Il vous suffit de me suivre.",
+                                        "trigger_event": "moveNpc"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "text": "Dire au revoir",
+                            "next_node": {
+                                "node_id": "goodbye",
+                                "speaker_id": "npc_1",
+                                "text": "Très bien, à bientôt !",
+                                "children": [
+                                    {
+                                        "node_id": "goodbye_end",
+                                        "speaker_id": "npc_1",
+                                        "text": "Si tu vois ce message, c'est que ça fonctionne."
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
